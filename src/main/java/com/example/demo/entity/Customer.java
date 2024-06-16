@@ -29,7 +29,7 @@ public class Customer {
     @Column(name = "date_of_birth")
     LocalDate dateOfBirth;
 
-    public int getAge() {
-        return Period.between(dateOfBirth, LocalDate.now()).getYears();
+    public Integer getAge() {
+        return Period.between(this.dateOfBirth, LocalDate.now()).getYears();
     }
 }

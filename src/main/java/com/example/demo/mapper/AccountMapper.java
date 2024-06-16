@@ -2,8 +2,8 @@ package com.example.demo.mapper;
 
 import com.example.demo.dto.AccountGetDto;
 import com.example.demo.dto.AccountPostDto;
-import com.example.demo.dto.CustomerDto;
 import com.example.demo.entity.Account;
+import com.example.demo.entity.Customer;
 
 public class AccountMapper {
 
@@ -16,10 +16,10 @@ public class AccountMapper {
         return account;
     }
 
-    public static AccountGetDto mapToAccountGetDtoFromAccount(Account account, CustomerDto customerDto, double balance){
+    public static AccountGetDto mapToAccountGetDtoFromAccount(Account account, Customer customer, double balance){
         AccountGetDto accountGetDto = new AccountGetDto(
                 account.getId(),
-                customerDto,
+                CustomerMapper.mapToCustomerGetDto(customer),
                 account.getIBan(),
                 balance
         );

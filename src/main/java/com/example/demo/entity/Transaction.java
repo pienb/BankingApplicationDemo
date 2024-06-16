@@ -19,7 +19,6 @@ public class Transaction {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
-    // Dit is de PK naar account tabel.
     @Column(name = "account_id")
     Long accountId;
 

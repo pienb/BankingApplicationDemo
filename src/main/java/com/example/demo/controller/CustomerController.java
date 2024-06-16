@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.dto.CustomerDto;
+import com.example.demo.dto.CustomerGetDto;
 import com.example.demo.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -14,7 +15,7 @@ public class CustomerController {
         return customerService.createCustomer(customerDto);
     }
     @GetMapping("/{id}")
-    public CustomerDto getCustomer(@PathVariable Long id) {
+    public CustomerGetDto getCustomer(@PathVariable Long id) {
         return customerService.getCustomerById(id);
     }
 }

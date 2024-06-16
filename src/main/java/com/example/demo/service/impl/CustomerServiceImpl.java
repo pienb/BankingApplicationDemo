@@ -1,6 +1,7 @@
 package com.example.demo.service.impl;
 
 import com.example.demo.dto.CustomerDto;
+import com.example.demo.dto.CustomerGetDto;
 import com.example.demo.entity.Customer;
 import com.example.demo.exception.AccountNotFoundException;
 import com.example.demo.mapper.CustomerMapper;
@@ -26,11 +27,11 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public CustomerDto getCustomerById(Long id) {
+    public CustomerGetDto getCustomerById(Long id) {
         Customer customer = customerRepository
                 .findById(id)
                 .orElseThrow(() -> new AccountNotFoundException("Account does not exist"));
-        return CustomerMapper.mapToCustomerDto(customer);
+        return CustomerMapper.mapToCustomerGetDto(customer);
     }
 
 }
