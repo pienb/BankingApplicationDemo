@@ -4,6 +4,8 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 
 import com.example.demo.dto.CustomerGetDto;
@@ -38,11 +40,13 @@ public class CustomerServiceImplTest {
         customer = new Customer();
         customer.setCustomerId(1L);
         customer.setName("Test Customer");
+        customer.setDateOfBirth(LocalDate.now());
 //        customer.setAddress();
 
         customerDto = new CustomerDto();
         customerDto.setCustomerId(1L);
         customerDto.setName("Test Customer");
+        customerDto.setDateOfBirth("18-09-1995");
     }
 
     @Test
